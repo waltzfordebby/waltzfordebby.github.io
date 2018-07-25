@@ -1,0 +1,610 @@
+:root{
+	 --navBG: #4A6670;
+	 --menuT: #FFF8F0;
+	 --menuAH: #F8F272;
+	 --introBG: #FDE74C;
+	 --aboutBG: #9BC53D;
+	 --myWorkBG: #C3423F ;
+	 --footerBG: #404E4D;
+	 --headerC: #040F0F;;
+	 --textC: #0F1020;
+}
+
+html {
+	 box-sizing: border-box;
+	 height: 100%;
+}
+
+* {
+	 margin: 0px;
+	 padding: 0px;
+}
+
+body{
+	 line-height: 1.6;
+	 text-align: center;
+	 font-family: "Pixel";
+}
+
+@font-face {
+     font-family: "Lato";
+     src: url(../fonts/Lato/Lato-Regular.ttf);
+}
+
+@font-face {
+     font-family: "Pixel";
+     src: url(../fonts/vcr_osd_mono/VCR_OSD_MONO_1.ttf);
+}
+
+nav {
+	 width: 100%;
+	 background: red;
+	 overflow: auto;
+	 position: fixed;
+	 z-index: 2;
+	 top: 0;
+}
+
+/*Key Frames*/
+@Keyframes rotateX {
+	 from {transform: rotate(0deg);}
+	 to {transform: rotateX(360deg);}
+}
+
+nav .navigation-container {
+	 display: grid;
+	 grid-template-columns: 1fr repeat(2,minmax(auto,25rem)) 1fr;
+	 background: var(--navBG);
+}
+
+nav .navigation-container .navigation-content {
+	 grid-column: 2/4;
+}
+
+nav .navigation-container .navigation-content ul {
+	 display: flex;
+	 flex-direction: row;
+	 align-content: center;
+	 justify-content: center;
+	 list-style: none;
+	 overflow: hidden;
+}
+
+nav .navigation-container .navigation-content ul li {
+	 padding: .30rem 3rem;
+	 list-style: none;
+}
+
+nav .navigation-container .navigation-content ul li a {
+	 text-decoration: none;
+	 font-weight: bold;
+	 font-size: 1rem;
+	 color: var(--menuT);
+}
+
+nav .navigation-container .navigation-content ul li a.active{
+	 color: var(--menuAH); 
+}
+
+nav .navigation-container .navigation-content ul li a.active span{
+	 display:inline-block;
+	 opacity: 1;
+}
+
+nav .navigation-container .navigation-content ul li span{
+	 font-size: 1rem;
+	 padding: 0rem .5rem;
+	 opacity: 0;
+	 color: var(--menuAH); 
+}
+
+nav .navigation-container .navigation-content ul li a:hover{
+	 color: var(--menuAH);
+}
+
+nav .navigation-container .navigation-content ul li a:hover span{
+	 display:inline-block;
+	 opacity: 1;
+	 -webkit-animation: rotateX 3s infinite linear;
+     -moz-animation: rotateX 3s infinite linear;
+     -o-animation: rotateX 3s infinite linear;
+     -ms-transition: rotateX 3s infinite linear;
+     animation: rotateX 1s infinite linear;
+}
+
+main .introduction-wrapper {
+	 position: relative;
+}
+
+main .introduction-wrapper:after {
+	 content : "";
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+	 background: url(../images/test.png);
+	 background-size: cover;
+	 background-position: center;
+	 background-repeat: no-repeat;
+     width: 100%;
+     height: 100%;
+     opacity : .5;
+     z-index: -1;
+}
+
+main .introduction-wrapper:target {
+	 padding-top: 2.8rem;
+}
+
+main .introduction-wrapper .introduction-container {
+	 display: grid;
+	 grid-template-columns: 1fr repeat(2,minmax(auto,25rem)) 1fr;
+}
+
+main .introduction-wrapper .introduction-container .introduction-content {
+	 grid-column: 2/4;
+	 display: grid;
+	 grid-template-columns: repeat(2,1fr);
+	 padding: 5rem 3rem ;
+}
+
+main .introduction-wrapper .introduction-container .introduction-content .introduction-image {
+	 grid-column: 1;
+	 display: flex;
+	 flex-direction: column;
+	 align-content: center;
+	 justify-content: center;
+}
+
+main .introduction-wrapper .introduction-container .introduction-content .introduction-image img {
+	 height: auto;
+	 max-width: 100%;
+	 border-radius: 50%;
+}
+
+main .introduction-wrapper .introduction-container .introduction-content .introduction-text  {
+	 grid-column: 2;
+	 display: flex;
+	 flex-direction: column;
+	 align-content: center;
+	 justify-content: center;
+}
+
+main .introduction-wrapper .introduction-container .introduction-content .introduction-text h1 {
+	 font-size: 2rem;
+	 font-weight: bold;
+	 color: var(--headerC);
+}
+
+main .introduction-wrapper .introduction-container .introduction-content .introduction-text p  {
+	 font-size: 1.2rem;
+	 padding: 0rem 1rem;
+	 color: var(--textC);
+}
+
+main .about-wrapper {
+	 width: 100%;
+	 background: var(--aboutBG);
+	 position: relative;
+}
+
+main .about-wrapper:target {
+	 padding-top: 2.8rem;
+}
+
+main .about-wrapper .about-container {
+	 display: grid;
+	 grid-template-columns: 1fr repeat(2,minmax(auto,25rem)) 1fr;
+}
+
+main .about-wrapper .about-container .about-content {
+	 grid-column: 2/4;
+	 display: grid;
+	 grid-template-columns: 1fr;
+	 grid-row-gap: 3rem;
+	 padding: 5rem 2rem;
+}
+
+main .about-wrapper .about-container .about-content .about-title-container{
+	 display: flex;
+	 justify-content: flex-start;
+}
+
+main .about-wrapper .about-container .about-content .about-title-container h1{
+	 font-size: 2rem;
+}
+
+
+main .about-wrapper .about-container .about-content  .about-text {
+	 display: flex;
+	 flex-direction: column;
+	 align-content: center;
+	 justify-content: center;
+}
+
+main .about-wrapper .about-container .about-content  .about-text h1 {
+	 font-size: 2rem;
+	 font-weight: bold;
+	 padding-bottom: 1rem;
+	 color: var(--headerC);
+}
+
+main .about-wrapper .about-container .about-content  .about-text p {
+	 color: var(--textC);
+	 font-size: 1.1rem;
+}
+
+main .about-wrapper .about-container .about-content  .about-skills {
+	 display: grid;
+	 grid-template-columns: repeat(2,1fr);
+	 grid-gap: 2rem;
+}
+
+main .about-wrapper .about-container .about-content  .about-skills > div:before{
+	 content: '';
+	 color: white;
+     top: 0;
+     width: .5rem;
+     height: 100%;
+     position: absolute;
+     background: black;
+     left: -.5rem;
+}
+
+main .about-wrapper .about-container .about-content  .about-skills > div:after{
+	 content: '';
+     top: 0;
+     width: .5rem;
+     height: 100%;
+     position: absolute;
+     background: black;
+     right: -.5rem;
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container {
+	 height: 20rem;
+	 border-top: .5rem solid black;
+	 border-bottom: .5rem solid black;
+	 position: relative;
+	 background: white;
+	 display: flex;
+	 flex-direction: column;
+	 align-content: center;
+	 justify-content: start;
+	 cursor: pointer
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container h1 {
+	 padding: 1.5rem 0rem;
+	 font-size: 1.8rem;
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container:hover .about-skills-content-1 img{
+	 opacity: 1;
+	 -webkit-transition: opacity .5s linear;
+	 -moz-transition: opacity .5s linear;
+ 	 -o-transition: opacity .5s linear;
+ 	 transition: opacity .5s linear;
+
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container:hover .about-skills-content-2 img{
+	 opacity: 1;
+	 -webkit-transition: opacity 1s ease;
+	 -moz-transition: opacity 1s ease;
+ 	 -o-transition: opacity 1s ease;
+ 	 transition: opacity 1s ease;
+
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container:hover .about-skills-content-3 img{
+	 opacity: 1;
+	 -webkit-transition: opacity 1s ease;
+	 -moz-transition: opacity 1s ease;
+ 	 -o-transition: opacity 1s ease;
+ 	 transition: opacity 1s ease;
+
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container:hover .about-skills-content-4 img{
+	 opacity: 1;
+	 -webkit-transition: opacity 1s ease;
+	 -moz-transition: opacity 1s ease;
+ 	 -o-transition: opacity 1s ease;
+ 	 transition: opacity 1s ease;
+
+}
+
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container .about-skills-content-1{
+	 display: grid;
+	 grid-template-columns: repeat(3,1fr);
+	 grid-row-gap: 3rem;
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container .about-skills-content-1 img{
+	 height: auto;
+	 max-width: 100%;
+	 opacity: .5;
+}
+
+
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container .about-skills-content-2 {
+	 display: grid;
+	 grid-template-columns: repeat(2,1fr);
+	 grid-row-gap: 3rem;
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container .about-skills-content-2 img{
+	 height: auto;
+	 max-width: 100%;
+	 opacity: .5;
+}
+
+
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container .about-skills-content-3 {
+	 display: grid;
+	 grid-template-columns: repeat(3,1fr);
+
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container .about-skills-content-3 img{
+	 height: auto;
+	 max-width: 100%;
+	 opacity: .5;
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container .about-skills-content-4 {
+	 display: grid;
+	 align-items: center;
+	 justify-content: center;
+	 grid-template-columns: repeat(3,1fr);
+	 grid-row-gap: 3rem;
+
+}
+
+main .about-wrapper .about-container .about-content  .about-skills .about-skills-container .about-skills-content-4 img{
+	 height: auto;
+	 max-width: 100%;
+	 opacity: .5;
+}
+
+main .my-works-wrapper {
+	 width: 100%;
+	 background: var(--myWorkBG);
+	 position: relative;
+}
+
+main .my-works-wrapper:target {
+	 padding-top: 2.8rem;
+}
+
+main .my-works-wrapper .my-works-container {
+	 display: grid;
+	 grid-template-columns: 1fr repeat(2,minmax(auto,25rem)) 1fr;
+	 padding: 5rem 2rem;
+}
+
+main .my-works-wrapper .my-works-container .myWorks-title {
+ 	 grid-column: 2/4;
+ 	 display: flex;
+ 	 justify-content: flex-start;
+ 	 padding-bottom: 3rem;
+}
+
+main .my-works-wrapper .my-works-container .myWorks-title h1{
+	 font-size: 2rem;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content {
+	 grid-column: 2/4;
+	 display: grid;
+	 grid-template-columns: repeat(2,1fr);
+	 grid-gap: 5rem;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content > div:before{
+	 content: '';
+	 color: white;
+     top: 0;
+     width: .5rem;
+     height: 100%;
+     position: absolute;
+     background: #250001;
+     left: -.5rem;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content > div:after{
+	 content: '';
+     top: 0;
+     width: .5rem;
+     height: 100%;
+     position: absolute;
+     background: #250001;
+     right: -.5rem;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works {
+	 position: relative;
+	 border-top: .5rem solid #250001;
+	 border-bottom: .5rem solid #250001;
+	 display: flex;
+	 flex-direction: column;
+	 align-content: center;
+	 justify-content: start;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works h1{
+	 font-size: 1.3rem;
+	 padding: 1rem 0rem;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works h1 a{
+	 text-decoration: none;
+	 cursor: pointer;
+	 color: inherit;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works h1 a:hover{
+	 color: #A2A77F;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works .image-container {
+	 border-top: .5rem  solid #250001;
+	 border-bottom: .5rem  solid #250001;
+	 display: flex;
+	 flex-direction: column;
+	 align-content: center;
+	 justify-content: center;
+	 padding: 0rem 0rem;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works .image-container img {
+	 height: auto;
+	 max-width: 100%;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works ul {
+	 display: grid;
+	 padding: 1rem .5rem;
+	 grid-template-columns: 1fr;
+	 grid-row-gap: 1rem;
+	 text-align: left;
+	 list-style: none;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works li span {
+	 padding: 0rem .5rem;
+	 opacity: 0;
+	 display: inline-block;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works li {
+	 -webkit-touch-callout: none; 
+     -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works li i {
+	 padding-left: 1.5em;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works li:hover {
+	 color: #A2A77F;
+}
+
+main .my-works-wrapper .my-works-container .my-works-content .my-works li:hover span {
+	 opacity: 1;
+	 -webkit-animation: rotateX 3s infinite linear;
+     -moz-animation: rotateX 3s infinite linear;
+     -o-animation: rotateX 3s infinite linear;
+     -ms-transition: rotateX 3s infinite linear;
+     animation: rotateX 1s infinite linear;
+}
+
+footer {
+	 width: 100%;
+	 background: var(--footerBG);
+}
+
+footer .footer-wrapper {
+	 display: grid;
+	 grid-template-columns: 1fr repeat(2,minmax(auto,25rem)) 1fr;
+}
+
+
+footer .footer-wrapper .footer-content {
+	 grid-column: 2/4;
+	 display: grid;
+	 grid-template-columns: repeat(2,1fr);
+}
+
+footer .footer-wrapper .footer-content .footer-text{
+	 display: flex;
+	 flex-direction: column;
+	 align-content: center;
+	 justify-content: center;
+}
+
+footer .footer-wrapper .footer-content .footer-social-links {
+
+}
+
+footer .footer-wrapper .footer-content .footer-social-links ul {
+	 list-style: none;
+}
+
+footer .footer-wrapper .footer-content .footer-social-links ul li {
+	 display: inline-block;
+	 padding: 1rem 1rem;
+}
+
+footer .footer-wrapper .footer-content .footer-social-links ul li a {
+	 text-decoration: none;
+	 color: black;
+}
+
+footer .footer-wrapper .footer-content .footer-social-links ul li a:hover{
+	 opacity: .5;
+}
+
+/*Responsiveness*/
+@media(max-width:700px){
+
+
+	nav .navigation-container .navigation-content ul li {
+	 padding: .30rem 1rem;
+	}
+
+	main .introduction-wrapper .introduction-container .introduction-content {
+		 grid-column: 2/4;
+		 display: grid;
+		 grid-template-columns: repeat(1,1fr);
+	}
+
+	main .introduction-wrapper .introduction-container .introduction-content .introduction-image {
+		 grid-column: 1;
+	}
+
+	main .introduction-wrapper .introduction-container .introduction-content .introduction-text  {
+		 grid-column: 1;
+
+	}
+
+	main .about-wrapper .about-container .about-content  .about-skills {
+	 display: grid;
+	 grid-template-columns: repeat(1,1fr);
+	 grid-gap: 2rem;
+	}
+
+	main .my-works-wrapper .my-works-container .my-works-content {
+	 grid-column: 2/4;
+	 display: grid;
+	 grid-template-columns: repeat(1,1fr);
+	 grid-gap: 5rem;
+	}
+
+	main .my-works-wrapper .my-works-container .my-works-content .my-works li i {
+	 padding-left: 0em;
+	}
+
+	footer .footer-wrapper .footer-content {
+	 grid-column: 2/4;
+	 display: grid;
+	 grid-template-columns: repeat(1,1fr);
+	}
+
+
+
+
+
+
+}
+
+
+
